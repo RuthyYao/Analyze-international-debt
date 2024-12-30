@@ -1,4 +1,4 @@
-# Analyze International Debt 
+# Analyze World Bank International Debt 
 
 <p align="center">
 <img src="https://github.com/RuthyYao/Analyze-international-debt/blob/main/img/front-image.PNG" align="center" width="1200" height="200" >
@@ -27,7 +27,7 @@ SELECT * FROM international_debt LIMIT 5;
 | Afghanistan    | AFG          | PPG, bilateral (DIS, current US$)                                | DT.DIS.BLAT.CD | 49114729.4 |
 | Afghanistan    | AFG          | PPG, bilateral (INT, current US$)                                | DT.INT.BLAT.CD | 39903620.1 |
 
-The dataset features the country name, borrowing purposes and the amount of debt. 
+The dataset contains information about the amount of debt (in USD) owed by developing countries across several categories.
 
 ## Data Analysis
 
