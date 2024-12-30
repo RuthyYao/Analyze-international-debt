@@ -20,8 +20,11 @@ FROM international_debt;
 -- 2. Finding out the distinct debt indicators
 SELECT
 	DISTINCT indicator_code AS purpose_debt_code,
-    indicator_name AS purpose_debt
-FROM international_debt;
+    indicator_name AS purpose_debt,
+    ROUND(SUM(debt)/1000000,2) AS debt_amount
+FROM international_debt
+GROUP BY indicator_code, indicator_name
+ORDER BY debt_amount DESC;
 
 SELECT
 	COUNT(DISTINCT indicator_code) AS loan_purpose_count
@@ -38,21 +41,23 @@ SELECT
     SUM(debt)/1000000 AS total_debts
 FROM international_debt
 GROUP BY country_name
-ORDER BY total_debts DESC;
+ORDER BY total_debts DESC
+LIMIT 10;
 
 -- 5. Average amount of debt across indicators
 SELECT
 	indicator_code,
     indicator_name,
-    AVG(debt) / 1000000 AS avg_debt
+    ROUND(AVG(debt) / 1000000, 2) AS avg_debt
 FROM International_debt
 GROUP BY Indicator_code, Indicator_name
-ORDER BY avg_debt DESC;
+ORDER BY avg_debt DESC
+LIMIT 10;
 
 -- 6. The highest amount of principal repayments
 SELECT
 	country_name,
-    debt / 1000000
+    ROUND(debt / 1000000, 2)
 FROM international_debt
 WHERE debt = 
 	(SELECT MAX(debt) FROM international_debt WHERE indicator_code = 'DT.AMT.DLXF.CD');
@@ -75,7 +80,8 @@ SELECT
     MAX(debt) / 1000000 AS maximum_debt
 FROM international_debt
 GROUP BY indicator_code, indicator_name, country_name
-ORDER BY maximum_debt DESC;
+ORDER BY maximum_debt DESC
+LIMIT 10;
 
 
 	
