@@ -186,7 +186,7 @@ Majority of the highest amount of borrowing are for the reasons of repaying the 
 <br>
 
 <p align="center">
-<img src="https://github.com/RuthyYao/Analyze-international-debt/blob/main/img/dashboard.PNG" align="center" width="1000" height="600" >
+<img src="https://github.com/RuthyYao/Analyze-international-debt/blob/main/img/dashboard.PNG" align="center" width="1200" height="600" >
 
 ---
 * View the complete syntax [HERE](https://github.com/RuthyYao/Analyze-international-debt/blob/main/International_debt_query.sql).
